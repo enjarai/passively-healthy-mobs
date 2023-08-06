@@ -28,9 +28,9 @@ public abstract class LivingEntityMixin extends Entity {
             at = @At("HEAD")
     )
     private void healEntity(CallbackInfo info) {
-        var type = getType();
-        if (((Object) this instanceof PassiveEntity || type.isIn(MORE_HEALTHY)) && !type.isIn(LESS_HEALTHY)) {
-            if (!this.getWorld().isClient && this.isAlive() && this.age % 100 == 0) {
+        if (this.age % 100 == 0 && !this.getWorld().isClient && this.isAlive()) {
+            var type = getType();
+            if (((Object) this instanceof PassiveEntity || type.isIn(MORE_HEALTHY)) && !type.isIn(LESS_HEALTHY)) {
                 this.heal(1.0F);
             }
         }
