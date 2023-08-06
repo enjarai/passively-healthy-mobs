@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "healthy-mobs",
+	"version": "${version}",
+	"name": "Passively Healthy Mobs",
+	"description": "Let passive mobs naturally regenerate their health when damaged.",
+	"authors": [
+		"enjarai"
+	],
+	"contact": {
+		"homepage": "https://enjarai.dev/",
+		"sources": "https://github.com/enjarai/passively-healthy-mobs",
+		"issues": "https://github.com/enjarai/passively-healthy-mobs/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/healthy-mobs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.enjarai.healthymobs.HealthyMobs"
+		],
+		"client": [
+			"dev.enjarai.healthymobs.HealthyMobsClient"
+		]
+	},
+	"mixins": [
+		"healthy-mobs.mixins.json",
+		{
+			"config": "healthy-mobs.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+	}
+}
